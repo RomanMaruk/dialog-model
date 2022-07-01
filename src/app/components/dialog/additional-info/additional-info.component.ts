@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./additional-info.component.scss']
 })
 export class AdditionalInfoComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
