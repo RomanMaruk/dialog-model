@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 import { DialogComponent } from './components/dialog/dialog.component';
 import { AdditionalInfoComponent } from './components/dialog/additional-info/additional-info.component';
@@ -34,9 +36,11 @@ import { DriverComponent } from './components/dialog/driver/driver.component';
     MatFormFieldModule,
     MatSelectModule,
     MatDialogModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule
   ],
-  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

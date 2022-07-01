@@ -1,5 +1,7 @@
 <mat-toolbar color="warn">
-  <button mat-button>{{ "Driver" | uppercase }}</button>
-  <button mat-button>{{ "Car Info" | uppercase }}</button>
-  <button mat-button>{{ "Information" | uppercase }}</button>
+  <button mat-button (click)="onDriver()">{{ "Driver" | uppercase }}</button>
+  <button mat-button (click)="onCarInfo()">{{ "Car Info" | uppercase }}</button>
+  <button mat-button (click)="onInformation()">
+    {{ "Information" | uppercase }}
+  </button>
 </mat-toolbar>
