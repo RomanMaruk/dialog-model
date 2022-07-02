@@ -1,0 +1,73 @@
+.container {
+  padding: 45px;
+  .title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.02em;
+    color: #1E3356;
+  }
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 20px;
+    .form {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+  }
+}
+.hint {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #78859A;
+}
+.input {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #78859A;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.select {
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
+mat-option.select__option {
+  height: 70px;
+  &:hover {
+    background-color: #DDE4FF;
+  }
+}
+mat-option.mat-option-text {
+  height: 70px;
+  text-align: center;
+}
+.mat-icon-img {
+  position: absolute;
+  top: 9px;
+}
+.car__photo{
+  height: 55px;
+  padding: 10px;
+  &-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}

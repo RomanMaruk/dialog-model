@@ -1,1 +1,50 @@
-<p>car-info works!</p>
+<div class="container">
+  <h1 class="title">Car Info</h1>
+  <form class="form">
+    <div class="form__element">
+      <div class="hint">
+        <mat-hint matSuffix>Make & model</mat-hint>
+      </div>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label></mat-label>
+        <mat-icon matPrefix matSuffix>
+          <img src="../../../../assets/wheel_.png" alt="clock" />
+        </mat-icon>
+        <input matInput class="input" placeholder="Make | Model" />
+      </mat-form-field>
+    </div>
+    <div class="form-element">
+      <div class="hint">
+        <mat-hint matSuffix>Registration number</mat-hint>
+      </div>
+      <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label></mat-label>
+        <mat-icon matPrefix class="mat-icon">
+          <img
+            src="../../../../assets/select.png"
+            alt="select"
+            class="mat-icon-img"
+          />
+        </mat-icon>
+        <mat-select placeholder="Registration" class="select">
+          <mat-option
+            *ngFor="let car of mockSelectDates"
+            value="{{ car.model }}"
+            class="select__option"
+          >
+            <mat-icon matPrefix class="car__photo">
+              <img
+                src="{{
+                  car.src ? car.src : '../../../../../../assets/camera.png'
+                }}"
+                alt="img car"
+                class="car__photo-img"
+              />
+            </mat-icon>
+            {{ car.registration }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
