@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./driver.component.scss']
 })
 export class DriverComponent implements OnInit {
+  toggle = true
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onToggle() {
+    this.toggle = !this.toggle
   }
 
 }

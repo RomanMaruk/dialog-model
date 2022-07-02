@@ -1,0 +1,44 @@
+<div class="container">
+  <form class="form">
+    <h1 class="title">Driver information</h1>
+    <div>
+      <mat-hint matSuffix>Driver</mat-hint>
+    </div>
+    <mat-button-toggle-group aria-label="people" class="button-group">
+      <mat-button-toggle
+        (change)="onToggle()"
+        value="self"
+        checked="true"
+        [ngClass]="toggle ? 'tog-button active' : 'tog-button'"
+        ><mat-icon *ngIf="toggle">person</mat-icon> Self</mat-button-toggle
+      >
+      <mat-button-toggle
+        (change)="onToggle()"
+        value="other"
+        [ngClass]="!toggle ? 'tog-button active' : 'tog-button'"
+        ><mat-icon *ngIf="!toggle">people</mat-icon> Other
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field appearance="fill" floatLabel="always">
+      <mat-label></mat-label>
+      <mat-icon matPrefix matSuffix class="mat-icon"> people </mat-icon>
+      <input
+        class="input"
+        matInput
+        type="text"
+        #name
+        placeholder="Driver name"
+      />
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="name.value = ''"
+      >
+        <mat-icon *ngIf="name.value">close</mat-icon>
+        <mat-icon *ngIf="!name.value">edit</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</div>

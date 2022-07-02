@@ -19,6 +19,7 @@ import {
   NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 // Components
 import { DialogComponent } from './components/dialog/dialog.component';
@@ -52,6 +53,7 @@ import { DriverComponent } from './components/dialog/driver/driver.component';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
