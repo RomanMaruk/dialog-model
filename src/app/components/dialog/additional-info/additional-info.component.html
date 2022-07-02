@@ -18,7 +18,9 @@
         <input
           matInput
           [ngxMatDatetimePicker]="pickerStart"
+          (focus)="pickerStart.open()"
           placeholder="--/--/----/--:--"
+          readonly
         />
         <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
         <mat-datepicker-toggle
@@ -61,7 +63,9 @@
         <input
           matInput
           [ngxMatDatetimePicker]="pickerEnd"
+          (focus)="pickerEnd.open()"
           placeholder="--/--/----/--:--"
+          readonly
         />
         <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
         <mat-datepicker-toggle
