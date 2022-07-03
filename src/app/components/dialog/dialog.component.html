@@ -1,12 +1,26 @@
-<mat-toolbar color="warn">
-  <button mat-button (click)="onDriver()">{{ "Driver" | uppercase }}</button>
-  <button mat-button (click)="onCarInfo()">{{ "Car Info" | uppercase }}</button>
-  <button mat-button (click)="onInformation()">
-    {{ "Information" | uppercase }}
-  </button>
-</mat-toolbar>
-<app-additional-info></app-additional-info>
-<hr />
-<app-car-info></app-car-info>
-<hr />
-<app-driver></app-driver>
+<mat-dialog-content class="container">
+  <h1 class="title">{{ "Log Name" | uppercase }}</h1>
+  <mat-form-field appearance="fill" floatLabel="always" class="form-field-log">
+    <mat-label></mat-label>
+    <mat-icon matPrefix matSuffix class="mat-icon">edit</mat-icon>
+    <input class="input" matInput type="text" #name placeholder="Driver name" />
+    <button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="name.value = ''"
+    >
+      <mat-icon>close</mat-icon>
+      <!-- <mat-icon *ngIf="!name.value">edit</mat-icon> -->
+    </button>
+  </mat-form-field>
+  <app-additional-info></app-additional-info>
+  <app-driver></app-driver>
+  <app-car-info></app-car-info>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Drafts</button>
+    <button class="btn" mat-raised-button [mat-dialog-close]="true">
+      Save to log book
+    </button>
+  </mat-dialog-actions>
+</mat-dialog-content>

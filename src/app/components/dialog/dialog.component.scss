@@ -1,0 +1,28 @@
+.container {
+  margin: -24px;
+  background-color: rgba(35, 43, 56, 0.2);
+  padding: 45px;
+  color: #232B38;
+  .title {
+    display: inline-block;
+    margin-right: 40px;
+    padding-bottom: 10px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    line-height: 22px;
+    line-height: 100%;
+  }
+  .form-field-log {
+    width: 600px;
+    padding-right: 200px;
+  }
+}
+.btn {
+  border-radius: 20px;
+  background-color: #1E3356;
+  color: #fff;
+  padding: 5px 24px;
+}
+mat-dialog-actions {
+  padding: 0;
+}

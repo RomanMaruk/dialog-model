@@ -1,7 +1,6 @@
 .container {
-  padding: 45px;
+  margin-bottom: 40px;
   .form {
-    background-color: #FFFFFF;
     .button-group {
       margin-right: 25px;
     }
@@ -16,7 +15,12 @@
     color: #1E3356;
   }
 }
+mat-hint {
+  position: relative;
+  top: -11px;
+}
 .button-group {
+  width: 400px;
   border: none;
   top: -10px;
 }

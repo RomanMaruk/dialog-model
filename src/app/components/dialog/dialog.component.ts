@@ -16,16 +16,6 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onDriver() {
-    this.dialog.open(DriverComponent)
-  }
 
-  onCarInfo() {
-    this.dialog.open(CarInfoComponent)
-  }
-
-  onInformation() {
-    this.dialog.open(AdditionalInfoComponent)
-  }
 
 }
