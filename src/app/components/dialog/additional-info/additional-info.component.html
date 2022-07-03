@@ -4,7 +4,12 @@
       <div class="wrap__departure-hint">
         <mat-hint matSuffix>Departure</mat-hint>
       </div>
-      <mat-form-field appearance="fill" floatLabel="always" class="form-field">
+      <mat-form-field
+        mat-form-field
+        appearance="fill"
+        floatLabel="always"
+        class="form-field"
+      >
         <input matInput placeholder="from" class="input" />
         <mat-icon matPrefix matSuffix class="icon-location"></mat-icon>
       </mat-form-field>
@@ -13,7 +18,11 @@
       <div class="wrap__departure-hint">
         <mat-hint matSuffix>Departure data and time</mat-hint>
       </div>
-      <mat-form-field appearance="legacy" floatLabel="always">
+      <mat-form-field
+        appearance="legacy"
+        floatLabel="always"
+        class="date-picker"
+      >
         <mat-label></mat-label>
         <input
           matInput
@@ -39,6 +48,9 @@
     </div>
   </div>
   <div class="wrap">
+    <div class="wrap__departure-hint" style="margin-left: 100px">
+      <mat-hint matSuffix>Total time</mat-hint>
+    </div>
     <div class="total">
       <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
       <span>0h 0m</span>
@@ -58,7 +70,11 @@
       <div class="wrap__departure-hint">
         <mat-hint matSuffix>Departure data and time</mat-hint>
       </div>
-      <mat-form-field appearance="legacy" floatLabel="always">
+      <mat-form-field
+        appearance="legacy"
+        floatLabel="always"
+        class="date-picker"
+      >
         <mat-label></mat-label>
         <input
           matInput

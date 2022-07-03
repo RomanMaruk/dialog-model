@@ -1,4 +1,6 @@
 .container {
+  margin: -24px;
+  background-color: #F5F5F5 !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,6 +18,16 @@
       margin: 30px 0;
     }
   }
+}
+.form-field {
+  background-color: #DDE4FF;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.date-picker {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px 5px;
 }
 .icon-location {
   background-image: url(../../../../assets/Location_.png);

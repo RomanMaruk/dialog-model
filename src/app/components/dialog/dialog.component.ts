@@ -17,7 +17,7 @@ export class DialogComponent implements OnInit {
   }
 
   onDriver() {
-    this.dialog.open(DriverComponent,)
+    this.dialog.open(DriverComponent)
   }
 
   onCarInfo() {

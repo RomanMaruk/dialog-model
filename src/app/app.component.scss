@@ -6,6 +6,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field-wrapper{
+  margin-bottom: -1.25em;
+}
+::ng-deep .mat-form-field-appearance-fill.form-field-info .mat-form-field-flex {
+  background-color: #FFFF;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 20px !important;
+}
+
 
 h1,
 h2,
