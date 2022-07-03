@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, NgModule, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-driver',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./driver.component.scss']
 })
 export class DriverComponent implements OnInit {
+  @Output() driver = new EventEmitter<string>();
   toggle = true
 
   constructor() { }
@@ -13,8 +15,9 @@ export class DriverComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onToggle() {
+  onToggle(value: any) {
     this.toggle = !this.toggle
+    this.driver.emit(value.value)
   }
 
 }

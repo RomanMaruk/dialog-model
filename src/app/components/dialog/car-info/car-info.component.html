@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="title">Car Info</h1>
-  <form class="form">
+  <form class="form" [formGroup]="carInfo" (change)="emitData()">
     <div class="form__element">
       <div class="hint">
         <mat-hint matSuffix>Make & model</mat-hint>
@@ -14,7 +14,12 @@
         <mat-icon matPrefix matSuffix>
           <img src="../../../../assets/wheel_.png" alt="clock" />
         </mat-icon>
-        <input matInput class="input" placeholder="Make | Model" />
+        <input
+          matInput
+          class="input"
+          placeholder="Make | Model"
+          formControlName="model"
+        />
       </mat-form-field>
     </div>
     <div class="form-element">
@@ -34,7 +39,12 @@
             class="mat-icon-img"
           />
         </mat-icon>
-        <mat-select placeholder="Registration" class="select">
+        <mat-select
+          placeholder="Registration"
+          class="select"
+          (selectionChange)="emitData()"
+          formControlName="registration"
+        >
           <mat-option
             *ngFor="let car of mockSelectDates"
             value="{{ car.model }}"

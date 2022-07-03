@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CarInfoInterface } from 'src/app/models/formGroups.inrerface';
 import { mockSDInterface } from 'src/app/models/mockDates.interface';
 
 @Component({
@@ -7,6 +9,7 @@ import { mockSDInterface } from 'src/app/models/mockDates.interface';
   styleUrls: ['./car-info.component.scss']
 })
 export class CarInfoComponent implements OnInit {
+  @Output() carData = new EventEmitter<CarInfoInterface>()
 
   mockSelectDates: mockSDInterface[] = [
     {
@@ -23,9 +26,18 @@ export class CarInfoComponent implements OnInit {
     },
   ]
 
+  carInfo: FormGroup = new FormGroup({
+    model: new FormControl('', Validators.required),
+    registration: new FormControl('', Validators.required)
+  })
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  emitData() {
+    this.carData.emit(this.carInfo.value)
   }
 
 }

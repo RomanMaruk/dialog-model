@@ -1,106 +1,135 @@
 <div class="container">
-  <div class="wrap">
-    <div class="wrap__departure">
-      <div class="wrap__departure-hint">
-        <mat-hint matSuffix>Departure</mat-hint>
-      </div>
-      <mat-form-field
-        mat-form-field
-        appearance="fill"
-        floatLabel="always"
-        class="form-field-add-info"
-      >
-        <input matInput placeholder="from" class="input" />
-        <mat-icon matPrefix matSuffix class="icon-location"></mat-icon>
-      </mat-form-field>
-    </div>
-    <div>
-      <div class="wrap__departure-hint">
-        <mat-hint matSuffix>Departure data and time</mat-hint>
-      </div>
-      <mat-form-field
-        appearance="legacy"
-        floatLabel="always"
-        class="date-picker"
-      >
-        <mat-label></mat-label>
-        <input
-          matInput
-          [ngxMatDatetimePicker]="pickerStart"
-          (focus)="pickerStart.open()"
-          placeholder="--/--/----/--:--"
-          readonly
-        />
-        <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
-        <mat-datepicker-toggle
-          matSuffix
-          [for]="$any(pickerStart)"
-        ></mat-datepicker-toggle>
-        <ngx-mat-datetime-picker
-          #pickerStart
-          [showSpinners]="true"
-          [stepMinute]="10"
-          [color]="'warn'"
-          [hideTime]="false"
+  <form [formGroup]="departureInfo" (change)="onSend()">
+    <div class="wrap">
+      <div class="wrap__departure">
+        <div class="wrap__departure-hint">
+          <mat-hint matSuffix>Departure</mat-hint>
+        </div>
+        <mat-form-field
+          mat-form-field
+          appearance="fill"
+          floatLabel="always"
+          class="form-field-add-info"
         >
-        </ngx-mat-datetime-picker>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="wrap__departure-hint" style="margin-left: 100px">
-      <mat-hint matSuffix>Total time</mat-hint>
-    </div>
-    <div class="total">
-      <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
-      <span>0h 0m</span>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="wrap__departure">
-      <div class="wrap__departure-hint">
-        <mat-hint matSuffix>Departure</mat-hint>
+          <input
+            matInput
+            placeholder="from"
+            class="input"
+            formControlName="from"
+          />
+          <mat-icon matPrefix matSuffix class="icon-location"></mat-icon>
+          <mat-error *ngIf="departureInfo.invalid"
+            >fiel shoudn't be empty</mat-error
+          >
+        </mat-form-field>
       </div>
-      <mat-form-field
-        appearance="fill"
-        floatLabel="always"
-        class="form-field-add-info"
-      >
-        <input matInput placeholder="from" class="input" />
-        <mat-icon matPrefix matSuffix class="icon-location"></mat-icon>
-      </mat-form-field>
-    </div>
-    <div>
-      <div class="wrap__departure-hint">
-        <mat-hint matSuffix>Departure data and time</mat-hint>
-      </div>
-      <mat-form-field
-        appearance="legacy"
-        floatLabel="always"
-        class="date-picker"
-      >
-        <mat-label></mat-label>
-        <input
-          matInput
-          [ngxMatDatetimePicker]="pickerEnd"
-          (focus)="pickerEnd.open()"
-          placeholder="--/--/----/--:--"
-          readonly
-        />
-        <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
-        <mat-datepicker-toggle
-          matSuffix
-          [for]="$any(pickerEnd)"
-        ></mat-datepicker-toggle>
-        <ngx-mat-datetime-picker
-          #pickerEnd
-          [showSpinners]="true"
-          [stepMinute]="10"
-          [color]="'warn'"
-          [hideTime]="false"
+      <div>
+        <div class="wrap__departure-hint">
+          <mat-hint matSuffix>Departure data and time</mat-hint>
+        </div>
+        <mat-form-field
+          appearance="legacy"
+          floatLabel="always"
+          class="date-picker"
         >
-        </ngx-mat-datetime-picker>
-      </mat-form-field>
+          <mat-label></mat-label>
+          <input
+            matInput
+            [ngxMatDatetimePicker]="pickerStart"
+            (focus)="pickerStart.open()"
+            placeholder="--/--/----/--:--"
+            readonly
+            formControlName="pickerStart"
+            (focus)="onSend()"
+          />
+          <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="$any(pickerStart)"
+          ></mat-datepicker-toggle>
+          <ngx-mat-datetime-picker
+            #pickerStart
+            [showSpinners]="true"
+            [stepMinute]="10"
+            [color]="'warn'"
+            [hideTime]="false"
+          >
+          </ngx-mat-datetime-picker>
+          <mat-error *ngIf="departureInfo.invalid"
+            >fiel shoudn't be empty</mat-error
+          >
+        </mat-form-field>
+      </div>
     </div>
-  </div>
+    <div class="wrap">
+      <div class="wrap__departure-hint" style="margin-left: 100px">
+        <mat-hint matSuffix>Total time</mat-hint>
+      </div>
+      <div class="total">
+        <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
+        <span>0h 0m</span>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="wrap__departure">
+        <div class="wrap__departure-hint">
+          <mat-hint matSuffix>Arrival</mat-hint>
+        </div>
+        <mat-form-field
+          appearance="fill"
+          floatLabel="always"
+          class="form-field-add-info"
+        >
+          <input
+            matInput
+            placeholder="to"
+            class="input"
+            #arrival
+            formControlName="to"
+          />
+          <mat-icon matPrefix matSuffix class="icon-location"></mat-icon>
+          <mat-error *ngIf="departureInfo.invalid"
+            >fiel shoudn't be empty</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div>
+        <div class="wrap__departure-hint">
+          <mat-hint matSuffix>Arrival data and time</mat-hint>
+        </div>
+        <mat-form-field
+          appearance="legacy"
+          floatLabel="always"
+          class="date-picker"
+        >
+          <mat-label></mat-label>
+          <input
+            matInput
+            [ngxMatDatetimePicker]="pickerEnd"
+            (focus)="pickerEnd.open()"
+            placeholder="--/--/----/--:--"
+            readonly
+            formControlName="pickerEnd"
+            (focus)="onSend()"
+          />
+          <mat-icon matPrefix matSuffix class="icon-clock"></mat-icon>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="$any(pickerEnd)"
+          ></mat-datepicker-toggle>
+          <ngx-mat-datetime-picker
+            #pickerEnd
+            [showSpinners]="true"
+            [stepMinute]="10"
+            [color]="'warn'"
+            [hideTime]="false"
+          >
+          </ngx-mat-datetime-picker>
+          <mat-error *ngIf="departureInfo.invalid"
+            >fiel shoudn't be empty</mat-error
+          >
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
 </div>
