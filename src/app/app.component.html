@@ -4,4 +4,21 @@
       {{ "Log Modal" | uppercase }}
     </button>
   </mat-toolbar>
+
+  <div *ngIf="driverData.length">
+    <div *ngFor="let driver of driverData">
+      <h1>Name: {{ driver.driverName }}</h1>
+      <p>driver: {{ driver.driver }}</p>
+      <p>registration: {{ driver.carInfo.registration }}</p>
+      <p>model: {{ driver.carInfo.model }}</p>
+      <h2>
+        From: {{ driver.departure.from }}
+        <span>data: {{ driver.departure.pickerStart | date }}</span>
+      </h2>
+      <h2>
+        To: {{ driver.departure.to }}
+        <span>data: {{ driver.departure.pickerEnd | date }}</span>
+      </h2>
+    </div>
+  </div>
 </div>

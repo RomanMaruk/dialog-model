@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CarInfoInterface, DepartureIterface } from 'src/app/models/formGroups.inrerface';
 
 @Component({
@@ -24,7 +24,7 @@ export class DialogComponent implements OnInit {
     })
   })
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public dialogRef: MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
   }
@@ -57,6 +57,7 @@ export class DialogComponent implements OnInit {
 
   setLogModal() {
     console.log(this.logModal.value)
+    this.dialogRef.close(this.logModal.value)
   }
 
 }
