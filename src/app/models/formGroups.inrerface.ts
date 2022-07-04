@@ -10,6 +10,7 @@ export interface CarInfoInterface {
   model: string
 }
 export interface LogModelInterface {
+  driverName: string
   carInfo: CarInfoInterface,
   departure: DepartureIterface,
   driver: string
